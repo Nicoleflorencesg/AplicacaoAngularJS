@@ -1,0 +1,73 @@
+﻿<html ng-app="myApp">
+<head>
+    
+    <script src="teste/js/angular.min.js"></script>
+    <link href="teste/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<!-- Criei uma controller -->
+<body ng-controller="CharactersCtrl">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    <img alt="Brand" src="teste/img/cabecario.png">
+                </a>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="row">
+            <h3>O ng-repeat vai criar uma tr para cada item dentro do array.</h3>
+        </div>
+        <br />
+        <div class="row">
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nome:</label>
+                <input type="text" class="form-control" ng-model="searchChar" placeholder="Buscar">
+            </div> 
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>Gênero</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Repetimos a tr para cada item
+            no array chamado "characters" -->
+            <tr ng-repeat="char in characters | filter:searchChar">
+                <td>{{char.name}}</td>
+                <td>{{char.age}}</td>
+                <td>{{char.gender}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div ng-view></div>
+        </div>
+        </div>
+    <!--<footer style="background-color:#e3e3e3">
+        <div class="container">
+            <br />
+            <div class="row">
+                <div class="col-md-4 col-xs-12">
+                    <span style="color:#d029b2">Teste vaga de Fron-End<span style="color:#fff"> Nicole Florence</span> 15/09/2016</span>
+                </div>
+                <div class="col-md-4 col-xs-12">
+                    <div class="footer-social text-center">
+                        <ul>
+                            <li><a href="https://www.facebook.com/nicole.florence.5" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://br.linkedin.com/in/nicole-florence-santos-gonçalves-3ba48656" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>-->
+    <script src="teste/teste.js"></script>
+    <script src="teste/characters-ctrl.js"></script>
+        </body>
+</html>
